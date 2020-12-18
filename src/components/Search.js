@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import Table from "./Table"
-import Cards from "./Cards"
+import React, { useContext } from 'react'
+import AppContext from '../utils/AppContext'
+
 
 export default function Search() {
-    const [criteria, setCriteria] = useState("First Name")
-    const [search, setSearch] = useState("")
-    const [sort, setSort] = useState("1")
-    const [display, setDisplay] = useState("Table")
+    const { criteria, setCriteria, setSearch, sort, setSort, display, setDisplay } = useContext(AppContext)
     let type;
     switch (criteria) {
         case "First Name":
@@ -64,8 +61,7 @@ export default function Search() {
                         </div>
                     </div>
                 </form>
-                <Table criteria={criteria} search={search} sort={sort} display={display} />
-                <Cards criteria={criteria} search={search} sort={sort} display={display} />
+
             </div>
         </>
     )

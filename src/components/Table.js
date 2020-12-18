@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext } from 'react'
+import AppContext from '../utils/AppContext'
 import employees from './employee.json'
 
 
-export default function Table({ criteria, search, sort, display }) {
+export default function Table() {
+    let { criteria, sort, search } = useContext(AppContext)
     sort = parseInt(sort)
-    return display === "Table" ? (
+    return (
         <>
             <table className="table table-striped">
                 <thead>
@@ -28,10 +30,8 @@ export default function Table({ criteria, search, sort, display }) {
                                 <td>{employee["E-mail"]}</td>
                                 <td>{employee["Position"]}</td>
                             </tr>)}
-
-
                 </tbody>
             </table>
         </>
-    ) : (<></>)
+    )
 }
