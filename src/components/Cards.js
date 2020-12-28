@@ -18,8 +18,8 @@ export default function Cards() {
                         <div className="card-body">
                             <ul className="list-unstyled">
                                 <li><strong>Employee Number: </strong>{employee["Employee Number"]}</li>
-                                <li><strong>Position: </strong>{employee["E-mail"]}</li>
-                                <li><strong>E-mail: </strong>{employee["Position"]}</li>
+                                <li><strong>Position: </strong>{employee["Position"]}</li>
+                                <li><strong>E-mail: </strong>{employee["E-mail"]}</li>
                             </ul>
                         </div>
                     </div>)}
